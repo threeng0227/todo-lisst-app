@@ -41,5 +41,5 @@ export const Colors = {
   blueDart: '#00008B',
   opacity: 'rgba(52, 52, 52, 0.1)',
   opacityModal: 'rgba(52, 52, 52, 0.5)',
-  yellowLight: '#FFFF0040',
+  mainOpacity: 'rgba(135, 78, 207, 0.3)',
 };

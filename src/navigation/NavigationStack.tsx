@@ -10,18 +10,19 @@ import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { ToastConfig } from 'components/ToastComponent';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Toast from 'react-native-toast-message';
+import { Colors } from 'theme';
 
 const Stack = createNativeStackNavigator();
 
 export const StackNavigator = () => {
-
+  const insets = useSafeAreaInsets();
 
   return (
-    <GestureHandlerRootView style={{ flex: 1 }}>
+    <GestureHandlerRootView style={{ flex: 1, paddingTop: insets.top }}>
         <StatusBar
           barStyle={'light-content'}
           translucent
-          backgroundColor={'rgba(52, 52, 52, 0.1)'}
+          backgroundColor={Colors.main}
         />
           <Stack.Navigator
             initialRouteName={Routes.Main}
