@@ -1,11 +1,12 @@
 import React, { useEffect, useRef } from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Routes } from './Routes';
-import { Alert, Animated, Platform, Pressable, StyleSheet, View } from 'react-native';
+import { Alert, Animated, Image, Platform, Pressable, StyleSheet, View } from 'react-native';
 import * as Screens from 'screens';
-import { BOTTOM_SIZE } from 'utils';
+import { BOTTOM_SIZE, scaleWidth } from 'utils';
 import { Colors, Fonts } from 'theme';
 import RemixIcon from 'react-native-remix-icon';
+import { AppImages } from 'assets';
 
 const BottomTab = createBottomTabNavigator();
 
@@ -65,7 +66,7 @@ export const BottomTabNavigation = () => {
           tabBarIcon: ({ focused }: any) => (
             <View style={styles.bottomItem}>
                 <RemixIcon
-                  name={'home-8-line'}
+                  name={'home-3-line'}
                   color={focused ? Colors.main : Colors.grey_600}
                   size={BOTTOM_SIZE}
                 />
@@ -81,7 +82,7 @@ export const BottomTabNavigation = () => {
           tabBarIcon: ({ focused }: any) => (
             <View style={styles.bottomItem}>
               <RemixIcon
-                name={'stack-line'}
+                name={'calendar-2-line'}
                 size={BOTTOM_SIZE}
                 color={focused ? Colors.main : Colors.grey_600}
               />
@@ -96,12 +97,11 @@ export const BottomTabNavigation = () => {
         options={{
           tabBarIcon: ({ focused }: any) => (
             <Pressable style={styles.bottomItem} onPress={() => Alert.alert('dmdmdmdmd')}>
-              <RemixIcon
-                name={'shopping-bag-3-line'}
-                size={BOTTOM_SIZE}
-                color={focused ? Colors.main : Colors.grey_600}
-              />
-              {focused && <FocusBorder focused={focused} />}
+             <Image source={AppImages.ADD_CIRCLE} style={{
+              width: 40,
+              height: 40,
+              tintColor: Colors.main
+             }} />
             </Pressable>
           ),
         }}
@@ -113,7 +113,7 @@ export const BottomTabNavigation = () => {
           tabBarIcon: ({ focused }: any) => (
             <View style={styles.bottomItem}>
               <RemixIcon
-                name={'service-line'}
+                name={'notification-3-line'}
                 size={BOTTOM_SIZE}
                 color={focused ? Colors.main : Colors.grey_600}
               />

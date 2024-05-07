@@ -5,9 +5,8 @@
 // import { IColors } from 'types/color'
 
 export const Colors = {
-  main: '#000',
+  main: 'rgb(135 78 207)',
   tabActive: '#feb753',
-  topsmarket: '#007647',
   body: '#ECF7FF', //  ECF7FF || F5F5FD
   blueMain: '#6AC4FE',
   blueSecondary: '#B2E2FE',
